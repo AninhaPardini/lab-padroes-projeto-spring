@@ -29,30 +29,30 @@ public class ClienteServiceImpl implements ClienteService {
 	private EnderecoRepository enderecoRepository;
 	@Autowired
 	private ViaCepService viaCepService;
-	
+
 	// Strategy: Implementar os métodos definidos na interface.
 	// Facade: Abstrair integrações com subsistemas, provendo uma interface simples.
 
 	@Override
-	public Iterable<Cliente> buscarTodos() {
+	public Iterable<Cliente> getAll() {
 		// Buscar todos os Clientes.
 		return clienteRepository.findAll();
 	}
 
 	@Override
-	public Cliente buscarPorId(Long id) {
+	public Cliente getClienteById(Long id) {
 		// Buscar Cliente por ID.
 		Optional<Cliente> cliente = clienteRepository.findById(id);
 		return cliente.get();
 	}
 
 	@Override
-	public void inserir(Cliente cliente) {
+	public void setClient(Cliente cliente) {
 		salvarClienteComCep(cliente);
 	}
 
 	@Override
-	public void atualizar(Long id, Cliente cliente) {
+	public void updateCliente(Long id, Cliente cliente) {
 		// Buscar Cliente por ID, caso exista:
 		Optional<Cliente> clienteBd = clienteRepository.findById(id);
 		if (clienteBd.isPresent()) {
@@ -61,7 +61,7 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public void deletar(Long id) {
+	public void deleteClienteById(Long id) {
 		// Deletar Cliente por ID.
 		clienteRepository.deleteById(id);
 	}

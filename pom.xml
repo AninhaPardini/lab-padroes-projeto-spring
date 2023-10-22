@@ -22,7 +22,7 @@
 	</properties>
 	
 	<dependencies>
-		<!-- Spring Data JPA (adicionado via Spring Initializr) -->
+		<!-- Spring Data JPA (adicionado via Spring Initializr) https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -32,19 +32,25 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- OpenFeign (adicionado via Spring Initializr) -->
+<!-- OpenFeign (adicionado via Spring Initializr) https://spring.io/projects/spring-cloud-openfeign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
-		<!-- OpenAPI/Swagger (adicionado manualmente) -->
+		<!-- OpenAPI/Swagger (adicionado manualmente) https://www.baeldung.com/spring-rest-openapi-documentation -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>${openapi.version}</version>
 		</dependency>
-
-		<!-- H2 Database (adicionado via Spring Initializr) -->
+		<!-- Lombok (adicionado via Spring Initializr) https://projectlombok.org/ -->
+		<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.18.20</version>
+  		<scope>provided</scope>
+		</dependency>
+		<!-- H2 - Database (adicionado via Spring Initializr) https://www.baeldung.com/spring-boot-h2-database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
